@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdio.h>
 
 int memefs_getattr(const char *path, struct stat *st)
 {
@@ -22,8 +23,25 @@ int memefs_getattr(const char *path, struct stat *st)
   return 0;
 }
 
+int memefs_readdir( const char *path, void *buffer, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi)
+{
+	printf( "--> Getting The List of Files of %s\n", path );
+	
+	filler( buffer, ".", NULL, 0 ); // Current Directory
+	filler( buffer, "..", NULL, 0 ); // Parent Directory
+	
+	if ( strcmp( path, "/" ) == 0 ) // If the user is trying to show the files/directories of the root directory show the following
+	{
+		filler( buffer, "file54", NULL, 0 );
+		filler( buffer, "file349", NULL, 0 );
+	}
+	
+	return 0;
+}
+
 static struct fuse_operations memefs_ops = {
-   .getattr = memefs_getatrr;
+   .getattr = memefs_getattr,
+   .readdir = memefs_readdir,
 };
 
 char *devfile = NULL;

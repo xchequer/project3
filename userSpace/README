@@ -1,15 +1,20 @@
 README Documentation
 Project Overview
+
 Introduction:
 A filesystem in userspace using FUSE.
+
 Contact:
 Ayodele Adeyinka kt98339@umbc.edu
+
 Installation and Setup
-Setup:
-Run mkmemefs with imgfile as imgfile and volname as vol_name (if you like).
-Then with memefs.c, you run imgfile as the mount point followed by a directory of your choosing. i used mountdir.
+Setup: 
+Using FUSE VERSION 29. 
+
 Build and Compile:
-Instructions for using the Makefile to compile the project. What commands should we use to run your code and how.
+Compiling mkmemefs.c - You shouldn't have to compile this, maybe because you have your own image file or you want to use mine, which is "imgfile". If you need to compile mkmemefs.c I have it in a folder called driver.
+Then with memefs.c, you compile it with "make", "imgfile" as the mount point followed by a directory of your choosing. i used "mountdir".
+
 User-Space Driver Programs
 Driver Overview:
 Explain the purpose of user-space drivers in testing your system calls.
