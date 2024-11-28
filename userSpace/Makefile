@@ -9,7 +9,7 @@ BIN = memefs
  
 # Compiler flags to pass to the system's C compiler while building
 # the source files
-CFLAGS = -g -Wall -Wextra -pedantic -std=gnu11 -I/usr/include/fuse 
+CFLAGS = -g -Wall -std=gnu11 -I/usr/include/fuse -D_FILE_OFFSET_BITS=64
 # Flags to pass to the linker while linking your program
 # You shouldn't need to change this at all.
 LDFLAGS = -g -lfuse
