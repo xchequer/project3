@@ -1,0 +1,43 @@
+README Documentation
+Project Overview
+
+Introduction:
+A filesystem in kernelspace using FUSE.
+
+Contact:
+Ayodele Adeyinka kt98339@umbc.edu
+
+Installation and Setup
+Setup: 
+Using FUSE VERSION 29. 
+
+Build and Compile:
+-run make to get memefs_module.ko
+-run sudo ./memefs test.img /tmp/memefs
+-run sudo insmod memefs_module.ko
+-run tests
+-run sudo dmesg
+-run sudo rmmod memefs_module
+-run sudo dmesg
+
+For my project 3 in userSpace
+go to driver
+to get mkmemefs executable:
+	make
+to get image file:
+	./mkmemefs test.img vol_name
+but test.img is available in kernelSpace.
+
+kernel-Space Driver Programs
+Driver Overview:
+Explain the purpose of user-space drivers in testing your system calls.
+Building and Running Drivers:
+Step-by-step instructions on building and running test programs.
+Testing Strategy
+Test Cases:
+List the key test cases and scenarios covered (e.g., error handling, edge cases).
+Troubleshooting
+Common Issues:
+Outline errors and solutions you faced while completing this project.
+References
+Cite all external resources used (websites, textbooks, tools, etc.) and any input from AI-based tools
